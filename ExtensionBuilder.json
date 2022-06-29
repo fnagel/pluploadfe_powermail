@@ -1,0 +1,42 @@
+{
+    "modules": [],
+    "properties": {
+        "backendModules": [],
+        "description": "Add a EXT:pluploadfe form element type to Powermail. Includes PHP validation and attaching files to emails.",
+        "emConf": {
+            "category": "plugin",
+            "custom_category": "",
+            "dependsOn": "typo3 => 11.5.0-11.5.99\n",
+            "disableLocalization": false,
+            "disableVersioning": true,
+            "generateDocumentationTemplate": true,
+            "generateEditorConfig": true,
+            "generateEmptyGitRepository": true,
+            "sourceLanguage": "en",
+            "state": "alpha",
+            "targetVersion": "11.5.0-11.5.99",
+            "version": "1.0.0"
+        },
+        "extensionKey": "pluploadfe_powermail",
+        "name": "Plupload for Powermail ",
+        "originalExtensionKey": "",
+        "originalVendorName": "",
+        "persons": [
+            {
+                "company": "",
+                "email": "info@felixnagel.com",
+                "name": "Felix Nagel",
+                "role": "Developer"
+            }
+        ],
+        "plugins": [],
+        "vendorName": "FelixNagel"
+    },
+    "wires": [],
+    "storagePath": "\/var\/www\/html\/packages\/",
+    "log": {
+        "last_modified": "2022-06-29 08:07",
+        "extension_builder_version": "v11.0.3",
+        "be_user": "Felix Nagel (3)"
+    }
+}
