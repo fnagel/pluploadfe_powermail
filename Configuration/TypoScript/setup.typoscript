@@ -1,0 +1,22 @@
+plugin.tx_powermail {
+  view {
+    # Add partials for new form type and form errors
+    partialRootPaths {
+      30 = EXT:pluploadfe_powermail/Resources/Private/Partials/
+    }
+  }
+
+  settings {
+    setup {
+      // Extension configuration
+      pluploadfe {
+        # PluploadFe instance (needed for rendering in template)
+        rendering < plugin.tx_pluploadfe_pi1
+        rendering {
+           templateFile = EXT:pluploadfe_powermail/Resources/Private/Templates/template.html
+        }
+      }
+    }
+  }
+}
+

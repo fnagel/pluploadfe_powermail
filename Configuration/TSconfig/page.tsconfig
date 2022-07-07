@@ -1,0 +1,19 @@
+# Configure type array
+tx_powermail.flexForm.type.addFieldOptions.pluploadfe.dataType = 1
+
+# Allow export
+tx_powermail.flexForm.type.addFieldOptions.pluploadfe.export = 1
+
+# Disable irrelevant fields
+TCEFORM.tx_powermail_domain_model_field {
+  multiselect {
+    types {
+      pluploadfe.disabled = 1
+    }
+  }
+  validation {
+    types {
+      pluploadfe.disabled = 1
+    }
+  }
+}

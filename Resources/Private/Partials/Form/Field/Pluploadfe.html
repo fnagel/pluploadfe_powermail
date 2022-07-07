@@ -1,0 +1,10 @@
+{namespace vh=In2code\Powermail\ViewHelpers}
+{namespace plupload=FelixNagel\PluploadfePowermail\ViewHelpers}
+
+<div class="powermail_fieldwrap powermail_fieldwrap_type_pluploadfe powermail_fieldwrap_{field.marker} {field.css} {settings.styles.framework.fieldAndLabelWrappingClasses}">
+	<f:render partial="Form/FieldLabel" arguments="{_all}" />
+
+	<div class="{settings.styles.framework.fieldWrappingClasses}">
+        <plupload:render uid="{field.uid}" settings="{settings}" />
+	</div>
+</div>
