@@ -26,6 +26,13 @@ plugin.tx_powermail {
            templateFile = EXT:pluploadfe_powermail/Resources/Private/Templates/template.html
         }
       }
+
+      # Add data processor for adding uploaded files
+      dataProcessors {
+        11 {
+          class = FelixNagel\PluploadfePowermail\DataProcessor\UploadDataProcessor
+        }
+      }
     }
   }
 }
