@@ -10,6 +10,16 @@ plugin.tx_powermail {
     setup {
       // Extension configuration
       pluploadfe {
+        # Email configuration
+        receiver {
+          # Add file attachments from pluploadfe fields
+          attachment = {$plugin.tx_powermail.settings.receiver.attachment}
+        }
+        sender {
+          # Add file attachments from pluploadfe fields
+          attachment = {$plugin.tx_powermail.settings.sender.attachment}
+        }
+
         # PluploadFe instance (needed for rendering in template)
         rendering < plugin.tx_pluploadfe_pi1
         rendering {
@@ -19,4 +29,3 @@ plugin.tx_powermail {
     }
   }
 }
-
