@@ -2,45 +2,53 @@
     "name": "felixnagel/pluploadfe-powermail",
     "type": "typo3-cms-extension",
     "description": "Add a EXT:pluploadfe form element type to Powermail. Includes PHP validation and attaching files to emails.",
+	"keywords": [
+		"TYPO3 CMS",
+		"powermail",
+		"upload",
+		"plupload",
+		"pluploadfe"
+	],
+	"homepage": "https://extensions.typo3.org/extension/pluploadfe_powermail/",
+	"support": {
+		"issues": "https://github.com/fnagel/pluploadfe_powermail/issues",
+		"docs": "https://github.com/fnagel/pluploadfe_powermail/blob/master/README.md",
+		"source": "https://github.com/fnagel/pluploadfe_powermail"
+	},
     "authors": [
         {
             "name": "Felix Nagel",
+			"email": "info@felixnagel.com",
+			"homepage": "https://www.felixnagel.com",
             "role": "Developer"
         }
     ],
     "license": "GPL-2.0-or-later",
     "require": {
-        "typo3/cms-core": "^11.5"
+		"php": ">=7.2,<8.1",
+        "typo3/cms-core": "^11.5",
+		"felixnagel/puploadfe": "^5.0",
+        "in2code/powermail": "^10.4"
     },
-    "require-dev": {
-        "typo3/testing-framework": "^6.9.0"
-    },
+	"require-dev": {
+		"friendsofphp/php-cs-fixer": "^2.19"
+	},
     "autoload": {
         "psr-4": {
             "FelixNagel\\PluploadfePowermail\\": "Classes"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "FelixNagel\\PluploadfePowermail\\Tests\\": "Tests"
-        }
-    },
     "replace": {
         "typo3-ter/pluploadfe-powermail": "self.version"
     },
-    "config": {
-        "vendor-dir": ".Build/vendor",
-        "bin-dir": ".Build/bin"
-    },
-    "scripts": {
-        "post-autoload-dump": [
-            "TYPO3\\TestingFramework\\Composer\\ExtensionTestEnvironment::prepare"
-        ]
-    },
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/TYPO3/TYPO3.CMS"
+		}
+	],
     "extra": {
         "typo3/cms": {
-            "cms-package-dir": "{$vendor-dir}/typo3/cms",
-            "web-dir": ".Build/public",
             "extension-key": "pluploadfe_powermail"
         }
     }
