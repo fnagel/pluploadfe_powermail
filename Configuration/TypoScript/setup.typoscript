@@ -46,3 +46,25 @@ plugin.tx_powermail {
     }
   }
 }
+
+# Add asset files for default template
+page {
+  includeJSFooter {
+    tx_pluploadfe_powermail = EXT:pluploadfe_powermail/Resources/Public/JavaScript/powermail.js
+    tx_pluploadfe_powermail.excludeFromConcatenation = 1
+  }
+
+  jsFooterInline {
+    36 = TEXT
+    36.value (
+      $(function() {
+        $(".tx-powermail form.powermail_form").pluploadFePowermail();
+      });
+    )
+  }
+
+  includeCSS {
+    tx_pluploadfe_powermail_css = EXT:pluploadfe_powermail/Resources/Public/Css/style.css
+    tx_pluploadfe_powermail_css.excludeFromConcatenation = 1
+  }
+}

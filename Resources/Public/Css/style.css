@@ -1,0 +1,7 @@
+.tx-pluploadfe-pi1 .plupload_container {
+	padding: 0
+}
+.tx-pluploadfe-pi1 .plupload_header,
+.tx-pluploadfe-pi1 .plupload_filelist_footer .plupload_button.plupload_start {
+	display: none;
+}
