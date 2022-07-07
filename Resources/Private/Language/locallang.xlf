@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2022-07-06T16:23:53Z">
+		<header/>
+		<body>
+			<trans-unit id="validationerror_pluploadfe_invalid_argument">
+				<source>Upload failed, please try again!</source>
+			</trans-unit>
+			<trans-unit id="validationerror_pluploadfe_invalid_configuration">
+				<source>Configuration not found or invalid!</source>
+			</trans-unit>
+			<trans-unit id="validationerror_pluploadfe_authentication">
+				<source>TYPO3 user session invalid!</source>
+			</trans-unit>
+			<trans-unit id="validationerror_pluploadfe_invalid_upload_directory">
+				<source>Invalid upload directory!</source>
+			</trans-unit>
+			<trans-unit id="validationerror_pluploadfe_invalid_file">
+				<source>Extension of file %s is not allowed!</source>
+			</trans-unit>
+			<trans-unit id="validationerror_pluploadfe_invalid_mime_type">
+				<source>Mime type of file %s is not allowed!</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

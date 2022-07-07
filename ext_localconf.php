@@ -17,4 +17,8 @@ call_user_func(function ($packageKey) {
         'manipulateMail',
         FALSE
     );
+
+    // Extend localization files
+    $GLOBALS['TYPO3_CONF_VARS']['SYS']['locallangXMLOverride']['EXT:powermail/Resources/Private/Language/locallang.xlf'][] =
+        'EXT:pluploadfe_powermail/Resources/Private/Language/locallang.xlf';
 }, 'pluploadfe_powermail');

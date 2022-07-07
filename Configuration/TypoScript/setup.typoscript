@@ -33,6 +33,16 @@ plugin.tx_powermail {
           class = FelixNagel\PluploadfePowermail\DataProcessor\UploadDataProcessor
         }
       }
+
+      // Add validation
+      validators {
+        36 {
+          class = FelixNagel\PluploadfePowermail\Validator\UploadValidator
+          # Empty require is needed due to type hinting in EXT:powermail
+          # @todo Check if this can be removed!
+          require =
+        }
+      }
     }
   }
 }
