@@ -58,4 +58,24 @@ class Mail implements SingletonInterface
 
         return $files;
     }
+
+    /**
+     * Returns all files from a given field object and its answers.
+     *
+     * @return string[]
+     */
+    public static function getFilesByField(MailObject $mail, Field $field): array
+    {
+        $files = [];
+
+        /* @var $answer Answer */
+        foreach ($mail->getAnswers() as $answer) {
+            if ($field === $answer->getField()) {
+                /** @noinspection SlowArrayOperationsInLoopInspection */
+                $files = array_merge($files, $answer->getValue());
+            }
+        }
+
+        return $files;
+    }
 }

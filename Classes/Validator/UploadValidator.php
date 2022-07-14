@@ -26,7 +26,8 @@ class UploadValidator extends AbstractValidator
         foreach (MailUtility::getFields($mail) as $field) {
             // Check for mandatory fields
             if ($field->isMandatory()) {
-                $files = SessionUtility::getFilesByPowermailField($field);
+                $files = MailUtility::getFilesByField($mail, $field) ?: SessionUtility::getFilesByPowermailField($field);
+
                 if (empty($files)) {
                     $this->setErrorAndMessage($field, 'mandatory');
                 }
