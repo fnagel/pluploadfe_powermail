@@ -34,7 +34,7 @@ class UploadValidator extends AbstractValidator
 
             // Check messages
             $messages = SessionUtility::getMessagesByPowermailField($field);
-            if (count($messages)) {
+            if (!empty($messages)) {
                 $this->setValidState(false);
 
                 foreach ($messages as $message) {
