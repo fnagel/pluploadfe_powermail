@@ -10,12 +10,11 @@ namespace FelixNagel\PluploadfePowermail\ViewHelpers;
  */
 
 use FelixNagel\PluploadfePowermail\Utility\Configuration;
-use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3Fluid\Fluid\Core\Rendering\RenderingContextInterface;
 use TYPO3Fluid\Fluid\Core\ViewHelper\AbstractViewHelper;
 use TYPO3Fluid\Fluid\Core\ViewHelper\Traits\CompileWithRenderStatic;
 
-class RenderViewHelper extends AbstractViewHelper
+class GetConfigurationUidViewHelper extends AbstractViewHelper
 {
     use CompileWithRenderStatic;
 
@@ -24,25 +23,10 @@ class RenderViewHelper extends AbstractViewHelper
     public function initializeArguments()
     {
         $this->registerArgument('uid', 'int', 'Powermail field record UID', true);
-        $this->registerArgument('settings', 'array', 'Powermail TypoScript settings', true);
     }
 
     public static function renderStatic(array $arguments, \Closure $renderChildrenClosure, RenderingContextInterface $renderingContext)
     {
-        $settings = (array)$arguments['settings'];
-
-        // Set configuration
-        $settings['pluploadfe']['rendering']['uid'] = 'powermail_'.$arguments['uid'];
-        $settings['pluploadfe']['rendering']['configUid'] = Configuration::getUidByPowermailField((int)$arguments['uid']);
-
-        return static::getContentObjectRenderer()->cObjGetSingle(
-            $settings['pluploadfe']['rendering']['_typoScriptNodeValue'],
-            $settings['pluploadfe']['rendering']
-        );
-    }
-
-    protected static function getContentObjectRenderer(): ContentObjectRenderer
-    {
-        return $GLOBALS['TSFE']->cObj;
+        return Configuration::getUidByPowermailField((int)$arguments['uid']);
     }
 }
