@@ -6,34 +6,51 @@
 	<script type="text/javascript">
 	// ###TEMPLATE_CODE###
 	$(function() {
-        $('#uploader_###UID###').pluploadQueue({
-            // General settings
-            runtimes : 'html5,flash,silverlight,html4',
-            url : '###UPLOAD_FILE###',
-            unique_names : false,
-            rename: true,
-            dragdrop: true,
-            multiple_queues: true,
-            quality: 100,
+        var id = '#uploader_###UID###',
+            init = function(element) {
+                console.log("init", element);
+                element.pluploadQueue({
+                    // General settings
+                    runtimes : 'html5,flash,silverlight,html4',
+                    url : '###UPLOAD_FILE###',
+                    unique_names : false,
+                    rename: true,
+                    dragdrop: true,
+                    multiple_queues: true,
+                    quality: 100,
 
-            // Specify what files to browse for
-            filters: {
-                // Remove this when using chunked uploads
-                max_file_size: '###FILE_MAX_SIZE###',
-                mime_types: [
-                    {
-                        title: "Allowed files",
-                        extensions: "###FILE_EXTENSIONS###"
-                    }
-                ]
-            },
+                    // Specify what files to browse for
+                    filters: {
+                        // Remove this when using chunked uploads
+                        max_file_size: '###FILE_MAX_SIZE###',
+                        mime_types: [
+                            {
+                                title: "Allowed files",
+                                extensions: "###FILE_EXTENSIONS###"
+                            }
+                        ]
+                    },
 
-            // Flash settings
-            flash_swf_url: '###EXTDIR_PATH###Resources/Public/JavaScript/plupload/js/Moxie.swf',
+                    // Flash settings
+                    flash_swf_url: '###EXTDIR_PATH###Resources/Public/JavaScript/plupload/js/Moxie.swf',
 
-            // Silverlight settings
-            silverlight_xap_url: '###EXTDIR_PATH###Resources/Public/JavaScript/plupload/js/Moxie.xap'
+                    // Silverlight settings
+                    silverlight_xap_url: '###EXTDIR_PATH###Resources/Public/JavaScript/plupload/js/Moxie.xap'
+                });
+            };
+
+        // Initial
+        init($(id));
+
+        // Powermail AJAX support
+        $(document).on('DOMNodeInserted', function(event) {
+            var element =  $(event.target);
+
+            if (element.is('form.powermail_form')) {
+                init(element.find(id));
+            }
         });
+
     });
 	// ###TEMPLATE_CODE###
 	</script>

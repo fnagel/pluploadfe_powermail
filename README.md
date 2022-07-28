@@ -11,6 +11,7 @@ A TYPO3 CMS extension providing an integration of EXT:pluploadfe into EXT:powerm
 * Email attachment (using a Powermail signal / slot)
 * Basic export and BE module support (using a Powermail data processor)
 * Upload on form submit (using a Java-Script plugin)
+* Support for Powermail AJAX functionality -> does not work as no hooks or events are provided -> solution might be to copy and change powermail Form.js
 
 
 
