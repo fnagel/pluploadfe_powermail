@@ -8,6 +8,11 @@ plugin.tx_powermail {
 
   settings {
     setup {
+      misc {
+        # Disable AJAX submit as not possible without JS overwrite
+        ajaxSubmit = 0
+      }
+
       // Extension configuration
       pluploadfe {
         # Email configuration

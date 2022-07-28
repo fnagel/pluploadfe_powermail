@@ -29,6 +29,8 @@ Todo & Known bugs
 
 Please see Github Issues: https://github.com/fnagel/pluploadfe_powermail/issues
 
+* Full integration with Powermail's file handling
+* Support for Powermail's AJAX submit functionality
 
 
 Contribution
