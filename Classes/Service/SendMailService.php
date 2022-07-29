@@ -10,14 +10,13 @@ namespace FelixNagel\PluploadfePowermail\Service;
  */
 
 use FelixNagel\PluploadfePowermail\Utility\Mail;
-use FelixNagel\PluploadfePowermail\Utility\Session;
 use In2code\Powermail\Domain\Service\Mail\SendMailService as SendMailServicePowermail;
 use TYPO3\CMS\Core\Mail\MailMessage;
 
 class SendMailService
 {
     /**
-     * Adds all plupload files to the mail message object.
+     * Attaches all plupload files to the mail message object.
      */
     public function manipulateMail(MailMessage $message, array &$email, SendMailServicePowermail $originalService)
     {
@@ -30,9 +29,5 @@ class SendMailService
         foreach (Mail::getFiles($originalService->getMail()) as $file) {
             $message->attachFromPath($file);
         }
-
-        // Clean up all session data
-        // @todo Remove this with next major version of EXT:pluploadfe!
-        Session::removeFiles();
     }
 }

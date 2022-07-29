@@ -32,13 +32,6 @@ plugin.tx_powermail {
         }
       }
 
-      # Add data processor for adding uploaded files
-      dataProcessors {
-        11 {
-          class = FelixNagel\PluploadfePowermail\DataProcessor\UploadDataProcessor
-        }
-      }
-
       // Add validation
       validators {
         36 {
@@ -47,6 +40,18 @@ plugin.tx_powermail {
           # @todo Check if this can be removed!
           require =
         }
+      }
+
+      # Add data processor for adding uploaded files
+      dataProcessors {
+        11 {
+          class = FelixNagel\PluploadfePowermail\DataProcessor\UploadDataProcessor
+        }
+      }
+
+      // Add finisher for removing files from session
+      finishers {
+        36.class = FelixNagel\PluploadfePowermail\Finisher\PluploadfeFinisher
       }
     }
   }

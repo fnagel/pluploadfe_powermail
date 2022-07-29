@@ -9,7 +9,6 @@ namespace FelixNagel\PluploadfePowermail\DataProcessor;
  * LICENSE.txt file that was distributed with this source code.
  */
 
-use FelixNagel\PluploadfePowermail\Utility\Configuration;
 use FelixNagel\PluploadfePowermail\Utility\Mail;
 use FelixNagel\PluploadfePowermail\Utility\Session;
 use In2code\Powermail\DataProcessor\AbstractDataProcessor;
@@ -35,7 +34,5 @@ class UploadDataProcessor extends AbstractDataProcessor
         $answer->setValue(is_array($files) ? $files : []);
         $answer->setField($field);
         $this->getMail()->addAnswer($answer);
-
-        Session::removeFiles(Configuration::getUidByPowermailField($field->getUid()));
     }
 }
