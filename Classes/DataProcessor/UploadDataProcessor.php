@@ -20,8 +20,13 @@ class UploadDataProcessor extends AbstractDataProcessor
 {
     public function uploadFilesDataProcessor(): void
     {
-        foreach (Mail::getFields($this->getMail()) as $field) {
-            $this->addFilesToMail($field);
+        // Make sure files are only added once (data processors are called twice, once on confirmation page, once on submit)
+        if (($this->getSettings()['main']['confirmation'] && $this->getActionMethodName() === 'confirmationAction') ||
+            (!$this->getSettings()['main']['confirmation'] && $this->getActionMethodName() === 'createAction'))
+        {
+            foreach (Mail::getFields($this->getMail()) as $field) {
+                $this->addFilesToMail($field);
+            }
         }
     }
 
