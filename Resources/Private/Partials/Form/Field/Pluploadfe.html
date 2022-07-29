@@ -11,9 +11,10 @@
             uid="powermail_{field.uid}"
             settings="{settings.pluploadfe.rendering}" />
 
-        <f:if condition="{vh:misc.prefillField(field:field, mail:mail)}">
+        <f:variable name="files">{pluploadPowermail:getFiles(field: field, mail: mail)}</f:variable>
+        <f:if condition="{files}">
             <ul class="powermail_fieldwrap_file_list">
-                <f:for each="{vh:misc.prefillField(field:field, mail:mail)}" as="file">
+                <f:for each="{files}" as="file">
                     <li>
                         <span class="fileName">{file}</span>
                     </li>
