@@ -25,9 +25,9 @@
     ],
     "license": "GPL-2.0-or-later",
     "require": {
-		"php": ">=7.2,<8.1",
+		"php": ">=7.4,<8.1",
         "typo3/cms-core": "^11.5",
-		"felixnagel/puploadfe": "^5.0",
+		"felixnagel/puploadfe": "^6.0",
         "in2code/powermail": "^9.0 || ^10.4"
     },
 	"require-dev": {
