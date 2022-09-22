@@ -41,7 +41,7 @@ Any help is appreciated. Please feel free to drop me a line, open issues or send
 
 ## Sponsoring
 
-The initial development of this extension has been sponsored by BECKER media - https://www.beckermedia.de/
+The initial development of this extension has been sponsored by i-provide GmbH / BECKER media.
 
 
 
